@@ -12,7 +12,7 @@ steps:
     commands:
       - cd Sources
       - npm install
-      - sonar-scanner -Dsonar.projectKey=PROJECT_NAME -Dsonar.sources=. -Dsonar.host.url=$${PLUGIN_SONAR_HOST} 
+      - sonar-scanner -Dsonar.projectKey=React-eat -Dsonar.sources=. -Dsonar.host.url=$${PLUGIN_SONAR_HOST} 
         -Dsonar.login=$${PLUGIN_SONAR_TOKEN}
     secrets: [ SECRET_SONAR_LOGIN ]
     settings:
