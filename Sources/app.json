@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "tp1",
-    "slug": "tp1",
+    "name": "React-eat",
+    "slug": "React-eat",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
