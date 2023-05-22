@@ -5,7 +5,7 @@ import { SettingsScreen } from '../screens/SettingsScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-export default function Navigation() {
+export default function TabNavigation() {
   const BottomTabNavigator = createBottomTabNavigator();
   return (
       <NavigationContainer>
