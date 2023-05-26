@@ -5,6 +5,8 @@ import { SettingsScreen } from '../screens/SettingsScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import BasketNavigationStack from './BasketNavigationStack';
+import { StyleSheet } from 'react-native';
+import { COLORS } from '../assets/colors';
 
 export default function TabNavigation() {
   const BottomTabNavigator = createBottomTabNavigator();
@@ -26,9 +28,9 @@ export default function TabNavigation() {
                                                   // You can return any component that you like here!
                                                   return <Ionicons name={iconName} size={size} color={color}/>;
                                               },
-                                              tabBarActiveTintColor: 'tomato',
+                                              tabBarActiveTintColor: COLORS.primary,
                                               tabBarInactiveTintColor: 'gray',
-                                              headerShown: false,
+                                              headerShown: true,
                                           })}>
                 <BottomTabNavigator.Screen name="Home" component={HomeScreen}
                                            options={{
@@ -37,6 +39,7 @@ export default function TabNavigation() {
                 <BottomTabNavigator.Screen name="Basket" component={BasketNavigationStack}
                                            options={{
                                                title: 'Basket',
+                                               headerShown: false
                                            }}/>
                 <BottomTabNavigator.Screen name="Settings" component={SettingsScreen}
                                            options={{
