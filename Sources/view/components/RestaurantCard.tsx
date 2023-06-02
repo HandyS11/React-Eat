@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import Restaurant from '../model/Restaurant';
+import Restaurant from '../../model/Restaurant';
 
 export function RestaurantCard(item: Restaurant){
   return(

@@ -1,6 +1,6 @@
 import {Button, Text, View} from "react-native";
 import React from "react";
-import { Stack } from "../navigation/BasketNavigationStack";
+import { Stack } from "../../navigation/BasketNavigationStack";
 import { useNavigation } from "@react-navigation/native";
 
 export function BasketScreen() {

@@ -1,6 +1,6 @@
 import {createStackNavigator} from "@react-navigation/stack";
-import {BasketScreen} from "../screens/BasketScreen";
-import {OrderScreen} from "../screens/OrderScreen";
+import {BasketScreen} from "../view/screens/BasketScreen";
+import {OrderScreen} from "../view/screens/OrderScreen";
 
 export default function BasketStackNavigation() {
     const Stack = createStackNavigator();

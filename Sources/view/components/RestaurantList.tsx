@@ -1,7 +1,7 @@
 import React from 'react';
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 import { RestaurantCard } from './RestaurantCard';
-import Restaurant from '../model/Restaurant';
+import Restaurant from '../../model/Restaurant';
 
 export function RestaurantList() {
   return (
