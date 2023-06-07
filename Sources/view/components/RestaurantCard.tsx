@@ -1,10 +1,17 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 import Restaurant from '../../model/Restaurant';
 
 export function RestaurantCard(item: Restaurant){
   return(
     <View style={styles.container}>
+      <Image style={{
+          width: '100%',
+          height: 200,
+          resizeMode: 'cover',
+          borderRadius: 10,
+        }} 
+        source={{uri: item.image}} />
       <Text style={styles.title}>{item.name}</Text>
       <Text>{item.description}</Text>
     </View>
@@ -13,7 +20,6 @@ export function RestaurantCard(item: Restaurant){
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#ddd',
     margin: 5,
     padding: 5,
     borderRadius: 10
