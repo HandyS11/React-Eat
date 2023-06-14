@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
+import {FlatList, Pressable, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 import { RestaurantCard } from './RestaurantCard';
 import { useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
@@ -16,9 +16,9 @@ export function RestaurantList() {
         data={restaurantList}
         renderItem={({item}) => {
           return (
-            <TouchableHighlight onPress={() => { navigation.navigate("RestaurantDetail") }}>
+            <Pressable onPress={() => { navigation.navigate("RestaurantDetail") }}>
               <RestaurantCard item={item}/>
-            </TouchableHighlight>
+            </Pressable>
           )
         }}
       />
