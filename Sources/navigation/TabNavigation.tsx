@@ -7,6 +7,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import BasketNavigationStack from './BasketNavigationStack';
 import { StyleSheet } from 'react-native';
 import { COLORS } from '../assets/colors';
+import HomeStackNavigation from './HomeNavigationStack';
 
 export default function TabNavigation() {
   const BottomTabNavigator = createBottomTabNavigator();
@@ -32,9 +33,10 @@ export default function TabNavigation() {
                                               tabBarInactiveTintColor: 'gray',
                                               headerShown: true,
                                           })}>
-                <BottomTabNavigator.Screen name="Home" component={HomeScreen}
+                <BottomTabNavigator.Screen name="Home" component={HomeStackNavigation}
                                            options={{
                                                title: 'Home',
+                                               headerShown: false
                                            }}/>
                 <BottomTabNavigator.Screen name="Basket" component={BasketNavigationStack}
                                            options={{

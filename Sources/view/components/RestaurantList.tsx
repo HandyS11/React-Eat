@@ -1,12 +1,12 @@
 import React from 'react';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {FlatList, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 import { RestaurantCard } from './RestaurantCard';
 import { useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 
 export function RestaurantList() {
-  // @ts-ignore
   const restaurantList = useSelector(state => {
+    // @ts-ignore
     return state.appReducer.restaurantList
   });
   const navigation = useNavigation()
@@ -14,7 +14,13 @@ export function RestaurantList() {
     <View>
       <FlatList
         data={restaurantList}
-        renderItem={({item}) => <RestaurantCard item={item}/>}
+        renderItem={({item}) => {
+          return (
+            <TouchableHighlight onPress={() => { navigation.navigate("RestaurantDetail") }}>
+              <RestaurantCard item={item}/>
+            </TouchableHighlight>
+          )
+        }}
       />
     </View>
   );
