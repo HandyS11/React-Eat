@@ -2,11 +2,12 @@ import {Text, View, Image, StyleSheet} from "react-native";
 import React from "react";
 import { useSelector } from "react-redux";
 
-export function RestaurantScreen() {
+export function RestaurantScreen({route}) {
     const restaurant = useSelector(state => {
         // @ts-ignore
-        return state.appReducer.restaurantList[0]
+        return state.appReducer.restaurantList[route.params.itemIndex]
       });
+
     return(
         <View>
             <Image style={styles.image}

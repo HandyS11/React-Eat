@@ -14,9 +14,9 @@ export function RestaurantList() {
     <View>
       <FlatList
         data={restaurantList}
-        renderItem={({item}) => {
+        renderItem={({item, index}) => {
           return (
-            <Pressable onPress={() => { navigation.navigate("RestaurantDetail") }}>
+            <Pressable onPress={() => { navigation.navigate('RestaurantDetail', {itemIndex: index}) }}>
               <RestaurantCard item={item}/>
             </Pressable>
           )

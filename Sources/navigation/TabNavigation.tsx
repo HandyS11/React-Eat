@@ -11,6 +11,9 @@ import HomeStackNavigation from './HomeNavigationStack';
 
 export default function TabNavigation() {
   const BottomTabNavigator = createBottomTabNavigator();
+
+    // TODO : mettre les routes en constantes
+
     return (
         <NavigationContainer>
             <BottomTabNavigator.Navigator initialRouteName="Home"
@@ -25,6 +28,8 @@ export default function TabNavigation() {
                                                   } else if (route.name === 'Settings') {
                                                       iconName = focused ? 'ios-list' : 'ios-list-outline';
                                                   }
+
+                                                  // TODO : changer cette merde et mettre une icone par page
 
                                                   // You can return any component that you like here!
                                                   return <Ionicons name={iconName} size={size} color={color}/>;
