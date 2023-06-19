@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, Pressable, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
+import {FlatList, Pressable, View} from 'react-native';
 import { RestaurantCard } from './RestaurantCard';
 import { useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
