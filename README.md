@@ -15,3 +15,32 @@
 [![Vulnerabilities](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=React-eat&metric=vulnerabilities&token=622beada19cf5b82499e0d66dc7759ee99299e0c)](https://codefirst.iut.uca.fr/sonar/dashboard?id=React-eat)
 
 # React-eat
+
+...
+
+## 📝 Purpose
+
+...
+
+## 🛠 Languages & tools
+
+![skills](https://skillicons.dev/icons?i=react,vscode)
+
+## 🖊️ Versions 
+
+- [React Native](https://reactnative.dev/): 0.7
+
+## 📍 Visuals
+
+| Master | Detail |
+| --- | --- |
+| ![](./Documentation/screens/) | ![](./Documentation/screens/) |
+
+## ⚙️ Architecture
+
+...
+
+## ✍️ Credits
+
+* Co-author [Mathis Ribémont](https://github.com/TEDDAC)
+* Co-author [Valentin Clergue](https://github.com/HandyS11)
