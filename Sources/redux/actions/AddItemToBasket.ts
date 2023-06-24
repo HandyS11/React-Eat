@@ -1,4 +1,3 @@
-import Restaurant from "../../model/Restaurant";
 import { ActionEnum } from "../../constants/actionEnum";
 
 export const addItemToBasket = (item: Article) => {

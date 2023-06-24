@@ -7,17 +7,21 @@ const initialState = {
 }
 
 export const appReducer = (state = initialState, action) => {
-    switch (action.type) {
-      case ActionEnum.FETCH_RESTAURANTS:
-        return {...state, restaurants: action.payload};
-      case ActionEnum.ADD_ITEM_TO_BASKET:
-        let newState = {...state, basket: [...state.basket, action.item]}
-        console.log(newState.basket)
-        return newState
-      default:
-        return state;
-    }
+  let newState
+  switch (action.type) {
+    case ActionEnum.FETCH_RESTAURANTS:
+      return {...state, restaurants: action.payload};
+    case ActionEnum.ADD_ITEM_TO_BASKET:
+      newState = {...state, basket: [...state.basket, action.item]}
+      return newState
+    case ActionEnum.REMOVE_ITEM_FROM_BASKET:
+      newState = {...state, basket: [...state.basket]}
+      newState.basket.splice(action.index, 1)
+      return newState
+    default:
+      return state;
   }
+}
 
 
 /* Cours
