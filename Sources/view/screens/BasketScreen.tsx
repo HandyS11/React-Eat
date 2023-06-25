@@ -29,7 +29,7 @@ export function BasketScreen() {
                 </View>
             }/>
             
-            <Text style={{fontWeight: "bold", paddingLeft: 5}}>Total: {prixTotal}€</Text>
+            <Text style={{fontWeight: "bold", paddingLeft: 5}}>Total: {Math.round(prixTotal * 100) / 100}€</Text>
         </View>
     )
 }
