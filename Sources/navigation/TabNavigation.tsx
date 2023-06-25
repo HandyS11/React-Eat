@@ -25,7 +25,7 @@ export default function TabNavigation() {
             title: 'Home',
             headerShown: false,
             tabBarIcon: ({ color, size }) => {
-              return <Ionicons name='home-outline' size={size} color={color} />
+              return <Ionicons name='home' size={size} color={color} />
             }
           }} />
         <BottomTabNavigator.Screen name="Basket" component={BasketNavigationStack}

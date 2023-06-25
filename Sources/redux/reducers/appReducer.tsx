@@ -4,7 +4,8 @@ import { storeBasket } from "../../storage/basketStorage";
 const initialState = {
     restaurantList: [],
     basket: [],
-    prixPanier: 0
+    prixPanier: 0,
+    pseudo: 'User'
 }
 
 export const appReducer = (state = initialState, action) => {
@@ -26,6 +27,9 @@ export const appReducer = (state = initialState, action) => {
     case ActionEnum.FETCH_BASKET:
       newState = {...state, basket: action.payload}
       newState.prixPanier = recalculerPrixTotal(newState.basket)
+      return newState
+    case ActionEnum.EDIT_PSEUDO:
+      newState = {...state, pseudo: action.payload}
       return newState
     default:
       return state;
