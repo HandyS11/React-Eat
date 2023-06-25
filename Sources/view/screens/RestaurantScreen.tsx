@@ -2,6 +2,7 @@ import {Text, View, Image, StyleSheet, FlatList, Button} from "react-native";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToBasket } from "../../redux/actions/AddItemToBasket";
+import { useNavigation } from "@react-navigation/native";
 
 export function RestaurantScreen({route}) {
     const restaurant = useSelector(state => {
@@ -9,6 +10,9 @@ export function RestaurantScreen({route}) {
         return state.appReducer.restaurantList[route.params.itemIndex]
       });
     const dispatch = useDispatch()
+    
+    const navigation = useNavigation()
+    navigation.setOptions({title: restaurant.name})
     return(
         <View>
             <Image style={styles.image}
