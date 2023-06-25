@@ -19,9 +19,9 @@ export function RestaurantScreen({route}) {
                 <FlatList 
                   data={restaurant.articles}
                   renderItem={({item}) => 
-                    <View>
-                      <Text>{item.name}</Text>
-                      <Text>{item.price}</Text>
+                    <View style={styles.card}>
+                      <Text style={{flex: 1, verticalAlign: "middle"}}>{item.name}</Text>
+                      <Text style={{paddingRight: 5, verticalAlign: "middle"}}>{item.price}</Text>
                       <Button title="Ajouter au panier" onPress={() => {
                           dispatch(addItemToBasket(item))
                       }}/>
@@ -48,5 +48,10 @@ const styles = StyleSheet.create({
     h3: {
         fontSize: 24,
         fontWeight: 'bold',
+    },
+    card: {
+      display: "flex",
+      flexDirection: "row",
+      paddingBottom: 5
     }
   });

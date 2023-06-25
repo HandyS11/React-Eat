@@ -3,7 +3,8 @@ import { storeBasket } from "../../storage/basketStorage";
 
 const initialState = {
     restaurantList: [],
-    basket: []
+    basket: [],
+    prixPanier: 0
 }
 
 export const appReducer = (state = initialState, action) => {
@@ -13,24 +14,31 @@ export const appReducer = (state = initialState, action) => {
       return {...state, restaurantList: action.payload};
     case ActionEnum.ADD_ITEM_TO_BASKET:
       newState = {...state, basket: [...state.basket, action.item]}
+      newState.prixPanier = recalculerPrixTotal(newState.basket)
       storeBasket(newState.basket)
       return newState
     case ActionEnum.REMOVE_ITEM_FROM_BASKET:
       newState = {...state, basket: [...state.basket]}
       newState.basket.splice(action.index, 1)
+      newState.prixPanier = recalculerPrixTotal(newState.basket)
       storeBasket(newState.basket)
       return newState
     case ActionEnum.FETCH_BASKET:
-      return {...state, basket: action.payload}
+      newState = {...state, basket: action.payload}
+      newState.prixPanier = recalculerPrixTotal(newState.basket)
+      return newState
     default:
       return state;
   }
 }
 
+function recalculerPrixTotal(articles: Article[]){
+  let total: Number = 0
 
-/* Cours
+  for(let item of articles){
+    // @ts-ignore
+    total = total + item.price
+  }
 
-Pour redux, les objets bindés sont immuables. On peut changer la référence de l'objet dans redux, ce qui va lancer la notification de modification et recharger tous l'écran.
-Quand on veux faire une modification, on lance donc une action que le reducer va traiter, on va modifier la référence, et la page va être rechargée avec les données à jours.
-
-*/
+  return total
+}
