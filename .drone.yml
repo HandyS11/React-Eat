@@ -19,3 +19,6 @@ steps:
       sonar_host: https://codefirst.iut.uca.fr/sonar/
       sonar_token:
         from_secret: SECRET_SONAR_LOGIN
+    when:
+      branch:
+        - master
