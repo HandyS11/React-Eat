@@ -52,9 +52,12 @@ Basket is stored in AsyncStorage, to be saved closind the app and opening later.
 
 ## 📍 Sketchs
 
-| Master | Detail |
+| Home | Details |
 | --- | --- |
 | ![](./Documentation/sketchs/homescreen.drawio.png) | ![](./Documentation/sketchs/restaurantscreen.drawio.png) |
+
+| Basket | Settings |
+| --- | --- |
 | ![](./Documentation/sketchs/basketscreen.drawio.png) | ![](./Documentation/sketchs/settingsscreen.drawio.png) |
 
 ## ✍️ Credits
