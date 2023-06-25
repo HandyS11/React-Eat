@@ -1,6 +1,5 @@
 import {Text, View, FlatList, StyleSheet, Button} from "react-native";
 import React from "react";
-import { useNavigation } from "@react-navigation/native";
 import { useDispatch, useSelector } from "react-redux";
 import { removeItemFromBasket } from "../../redux/actions/RemoveItemFromBasket";
 
