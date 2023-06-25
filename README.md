@@ -16,11 +16,12 @@
 
 # React-eat
 
-...
+A [React Native](https://reactnative.dev/) application made to interract with the [Mong-Eat](https://codefirst.iut.uca.fr/git/React-if/Mong-eat) API.
 
 ## 📝 Purpose
 
-...
+Create a [React Native](https://reactnative.dev/) application to interract with the [Mong-Eat](https://codefirst.iut.uca.fr/git/React-if/Mong-eat) API and manage a food delivery service.
+Implement a master/detail application to display the list of restaurants and the list of dishes of a restaurant.
 
 ## 🛠 Languages & tools
 
@@ -30,11 +31,17 @@
 
 - [React Native](https://reactnative.dev/): 0.7
 
-## 📍 Visuals
+## 🔮 Sketchs & visuals
 
-| Master | Detail |
+| Sketch | Final |
 | --- | --- |
-| ![](./Documentation/screens/) | ![](./Documentation/screens/) |
+| ![](./Documentation/sketchs) | ![](./Documentation/screens/) |
+| ![](./Documentation/sketchs) | ![](./Documentation/screens/) |
+| ![](./Documentation/sketchs) | ![](./Documentation/screens/) |
+
+## 🚀 Getting started
+
+...
 
 ## ⚙️ Architecture
 
