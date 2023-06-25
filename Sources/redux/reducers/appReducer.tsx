@@ -1,9 +1,8 @@
 import { ActionEnum } from "../../constants/actionEnum";
-import { stubRestaurant } from "../../constants/stub";
 import { storeBasket } from "../../storage/basketStorage";
 
 const initialState = {
-    restaurantList: [...stubRestaurant],
+    restaurantList: [],
     basket: []
 }
 
@@ -11,7 +10,7 @@ export const appReducer = (state = initialState, action) => {
   let newState
   switch (action.type) {
     case ActionEnum.FETCH_RESTAURANTS:
-      return {...state, restaurants: action.payload};
+      return {...state, restaurantList: action.payload};
     case ActionEnum.ADD_ITEM_TO_BASKET:
       newState = {...state, basket: [...state.basket, action.item]}
       storeBasket(newState.basket)

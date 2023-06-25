@@ -9,6 +9,7 @@ export function BasketScreen() {
         return state.appReducer.basket
       });
     const dispatch = useDispatch()
+
     return(
         <View>
             <FlatList data={basket}
