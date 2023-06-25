@@ -1,58 +1,49 @@
 import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import { HomeScreen } from '../view/screens/HomeScreen';
+import { NavigationContainer } from '@react-navigation/native';
 import { SettingsScreen } from '../view/screens/SettingsScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import BasketNavigationStack from './BasketNavigationStack';
-import { StyleSheet } from 'react-native';
 import { COLORS } from '../assets/colors';
 import HomeStackNavigation from './HomeNavigationStack';
 
 export default function TabNavigation() {
   const BottomTabNavigator = createBottomTabNavigator();
 
-    // TODO : mettre les routes en constantes
+  // TODO : mettre les routes en constantes
 
-    return (
-        <NavigationContainer>
-            <BottomTabNavigator.Navigator initialRouteName="Home"
-                                          screenOptions={({route}) => ({
-                                              tabBarIcon: ({focused, color, size}) => {
-                                                  let iconName;
-
-                                                  if (route.name === 'Home') {
-                                                      iconName = focused
-                                                          ? 'ios-information-circle'
-                                                          : 'ios-information-circle-outline';
-                                                  } else if (route.name === 'Settings') {
-                                                      iconName = focused ? 'ios-list' : 'ios-list-outline';
-                                                  }
-
-                                                  // TODO : changer cette merde et mettre une icone par page
-
-                                                  // You can return any component that you like here!
-                                                  return <Ionicons name={iconName} size={size} color={color}/>;
-                                              },
-                                              tabBarActiveTintColor: COLORS.primary,
-                                              tabBarInactiveTintColor: 'gray',
-                                              headerShown: true,
-                                          })}>
-                <BottomTabNavigator.Screen name="Home" component={HomeStackNavigation}
-                                           options={{
-                                               title: 'Home',
-                                               headerShown: false
-                                           }}/>
-                <BottomTabNavigator.Screen name="Basket" component={BasketNavigationStack}
-                                           options={{
-                                               title: 'Basket',
-                                               headerShown: false
-                                           }}/>
-                <BottomTabNavigator.Screen name="Settings" component={SettingsScreen}
-                                           options={{
-                                               title: 'Settings',
-                                           }}/>
-            </BottomTabNavigator.Navigator>
-        </NavigationContainer>
-    );
+  return (
+    <NavigationContainer>
+      <BottomTabNavigator.Navigator initialRouteName="Home"
+        screenOptions={({ route }) => ({
+          tabBarActiveTintColor: COLORS.primary,
+          tabBarInactiveTintColor: 'gray',
+          headerShown: true,
+        })}>
+        <BottomTabNavigator.Screen name="Home" component={HomeStackNavigation}
+          options={{
+            title: 'Home',
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => {
+              return <Ionicons name='home' size={size} color={color} />
+            }
+          }} />
+        <BottomTabNavigator.Screen name="Basket" component={BasketNavigationStack}
+          options={{
+            title: 'Basket',
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => {
+              return <Ionicons name='cart-outline' size={size} color={color} />
+            }
+          }} />
+        <BottomTabNavigator.Screen name="Settings" component={SettingsScreen}
+          options={{
+            title: 'Settings',
+            tabBarIcon: ({ focused, color, size }) => {
+              return <Ionicons name='ios-list' size={size} color={color} />;
+            }
+          }} />
+      </BottomTabNavigator.Navigator>
+    </NavigationContainer>
+  );
 }

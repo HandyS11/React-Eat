@@ -16,11 +16,17 @@
 
 # React-eat
 
-...
+## Install
+
+In the ``Sources`` directory, execute following commands to install and launch the expo server.
+```shell
+npm install
+npm start
+```
 
 ## 📝 Purpose
 
-...
+React-Eat is another application to order some foods on your mobile. You can see restaurants, add their articles in your basket and manage articles of your basket.
 
 ## 🛠 Languages & tools
 
